@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+
+import os, time
+
+c = 0
+s = 1
+while s > 0:
+	c += 1
+	s = os.system('ping -c 1 google.com 2> /dev/null')
+	if s < 1:
+		for i in range(3): 
+			os.system('play -q -n synth 0.1 sin 1400 || echo -e "\a" > /dev/null')
+	else:
+		print(c, ' : No internet')
+		time.sleep(5)
+
