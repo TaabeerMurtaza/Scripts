@@ -59,9 +59,11 @@ def log(status):
 					return 'Skipped'
 			except:
 				print('Error checking last record')
-	difference = int(n['h']) - hour
-	if difference > 0:
-		data = '\n' * difference + data
+
+		difference = int(n['h']) - hour
+		if difference > 0:
+			data = '\n' * difference + data
+	
 	try:
 		with open(file, 'a') as f:
 			f.write(data)
